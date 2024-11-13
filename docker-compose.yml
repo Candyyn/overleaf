@@ -137,12 +137,12 @@ services:
     # settings. We recommend using a properly managed nginx instance outside of the Overleaf Server Pro setup,
     # but the example here can be used if you'd prefer to run everything with docker-compose
 
-    # nginx-proxy:
-    #     image: jwilder/nginx-proxy
-    #     container_name: nginx-proxy
-    #     ports:
-    #       - "80:80"
-    #       - "443:443"
-    #     volumes:
-    #       - /var/run/docker.sock:/tmp/docker.sock:ro
-    #       - /home/overleaf/tmp:/etc/nginx/certs
+    nginx-proxy:
+         image: jwilder/nginx-proxy
+         container_name: nginx-proxy
+         ports:
+           - "4000:8080"
+           #- "4001:443"
+         volumes:
+           - /var/run/docker.sock:/tmp/docker.sock:ro
+           - /home/overleaf/tmp:/etc/nginx/certs
